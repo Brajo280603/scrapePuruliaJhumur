@@ -1,0 +1,10 @@
+{
+	"dependencies": {
+		"linkedom": "^0.18.0",
+		"nodemon": "^3.1.0"
+	},
+	"scripts": {
+		"scrape_single": "node nodescrapper.mjs",
+		"filter_songs":"node filter_songs.mjs"
+	}
+}
