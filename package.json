@@ -1,10 +1,14 @@
 {
 	"dependencies": {
+		"jsonrawtoxlsx": "^1.1.2",
 		"linkedom": "^0.18.0",
 		"nodemon": "^3.1.0"
 	},
 	"scripts": {
 		"scrape_single": "node nodescrapper.mjs",
-		"filter_songs":"node filter_songs.mjs"
+		"filter_songs": "node filter_songs.mjs",
+		"scrape_and_filter": "node nodescrapper.mjs && node filter_songs.mjs",
+		"convert_excel": "node convert_to_excel.mjs",
+		"full_scrape": "node nodescrapper.mjs && node filter_songs.mjs && node convert_to_excel.mjs"
 	}
 }

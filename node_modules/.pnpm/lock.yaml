@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  jsonrawtoxlsx:
+    specifier: ^1.1.2
+    version: 1.1.2
   linkedom:
     specifier: ^0.18.0
     version: 0.18.0
@@ -47,6 +50,12 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       fill-range: 7.0.1
+    dev: false
+
+  /cc-xlsx@0.20.0:
+    resolution: {integrity: sha512-wSg4zGudenOeXp6MwzT4qO0tYB/jSpX/1WlfD6gQ1FUxkCUFKIpPQCUjuFLEG9yy5JRD1/M5w/QkFPziVevwrA==}
+    engines: {node: '>=0.8'}
+    hasBin: true
     dev: false
 
   /chokidar@3.6.0:
@@ -198,6 +207,12 @@ packages:
   /is-number@7.0.0:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
+    dev: false
+
+  /jsonrawtoxlsx@1.1.2:
+    resolution: {integrity: sha512-Ti2X5r+T26suiX16SNPFjj9o1Sx9tTX6UYhkuMOtURZ9/KaKgTDJZKv5tlj9/TenbO+GUl1tvprMF93xGD6iKg==}
+    dependencies:
+      cc-xlsx: 0.20.0
     dev: false
 
   /linkedom@0.18.0:

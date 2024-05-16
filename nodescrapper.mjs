@@ -1,4 +1,4 @@
-import { write,appendFileSync } from 'fs';
+import { write,appendFileSync, writeFileSync } from 'fs';
 import {DOMParser , parseHTML, toJSON} from 'linkedom'
 
 
@@ -19,7 +19,8 @@ async function scrapper( site ){
 
         songs_info = {
             name:songs_info_arr[13],
-            link:"https://puruliadj.in" + songs_info_arr[4],
+            view_link:"https://puruliadj.in" + songs_info_arr[4],
+            direct_download_link: "https://puruliadj.in/files/download/id/" + (songs_info_arr[4].split('/')[2]),
             category: songs_info_arr[20],
             album: songs_info_arr[31],
             size: songs_info_arr[39],
@@ -59,7 +60,7 @@ async function writeSongsToFile(scraping_site){
     })
     console.log(cleanupArr)
 
-    appendFileSync('./received_songs.json',JSON.stringify(cleanupArr))
+    writeFileSync('./json/received_songs.json',JSON.stringify(cleanupArr))
 }
 
 writeSongsToFile(site);

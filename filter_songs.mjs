@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from "fs";
 
-let received_songs_arr = JSON.parse(readFileSync('./received_songs.json','utf-8'))
+let received_songs_arr = JSON.parse(readFileSync('./json/received_songs.json','utf-8'))
 
 
 let sorted_arr = received_songs_arr.filter(el=>{
@@ -12,7 +12,7 @@ let sorted_arr = received_songs_arr.filter(el=>{
 })
 
 
-writeFileSync('./filtered_songs.json',JSON.stringify(sorted_arr));
+writeFileSync('./json/filtered_songs.json',JSON.stringify(sorted_arr));
 
 let non_dj_songs = received_songs_arr.filter(el=>{
     if(typeof el.album == 'string' && !(el.album.includes('DJ')||el.album.includes("Dj")||el.album.includes("dj"))){
@@ -20,4 +20,4 @@ let non_dj_songs = received_songs_arr.filter(el=>{
     }
 })
 
-writeFileSync('./non_dj_songs.json',JSON.stringify(non_dj_songs))
+writeFileSync('./json/non_dj_songs.json',JSON.stringify(non_dj_songs))
