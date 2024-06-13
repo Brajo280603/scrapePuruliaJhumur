@@ -45,7 +45,17 @@ let site = 'https://puruliadj.in/files/search/find/+/sort/new2old/page/'
 async function writeSongsToFile(scraping_site){
     let output_arr = [];
 
-    for(let i = 1; i < 59;i++){
+    let pageHTML = await fetch("https://puruliadj.in/files/search?find=+&commit=Search");
+
+    pageHTML = await pageHTML.text()
+
+    const {document} = parseHTML(pageHTML);
+
+    let last_page_no = parseInt(document.querySelector(".pgn>div").innerText.split("/")[1].split(")")[0])
+
+    console.log(last_page_no)
+
+    for(let i = 1; i <= last_page_no;i++){
         let output = await scrapper(scraping_site+i);
 
         output_arr.push(output)
